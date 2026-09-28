@@ -83,6 +83,43 @@
 
     </div>
 </main>
+
+<!-- SECCIÓN DE CONTACTO -->
+<main id="seccion-contacto" class="container my-5 d-none">
+    <h1 class="text-center mb-4">Ponte en Contacto</h1>
+    <p class="text-center text-muted mb-5">¿Tienes alguna duda o sugerencia? Envíanos un mensaje y te responderemos pronto.</p>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm p-4">
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="asunto" class="form-label">Asunto</label>
+                        <input type="text" class="form-control" id="asunto" placeholder="Motivo de tu mensaje" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark w-100">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
 <footer class="bg-dark text-white text-center py-4 mt-5">
     <div class="container">
 
@@ -98,7 +135,24 @@
 
     </div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- SCRIPT PARA CAMBIAR ENTRE SECCIONES -->
+<script>
+    function mostrarSeccion(seccion) {
+        const inicio = document.getElementById('seccion-inicio');
+        const contacto = document.getElementById('seccion-contacto');
+
+        if (seccion === 'contacto') {
+            inicio.classList.add('d-none');
+            contacto.classList.remove('d-none');
+        } else if (seccion === 'inicio' || seccion === 'galeria') {
+            contacto.classList.add('d-none');
+            inicio.classList.remove('d-none');
+        }
+    }
+</script>
 
 </body>
 </html>
